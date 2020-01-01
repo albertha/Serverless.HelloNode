@@ -1,11 +1,20 @@
 {
+  "scripts": {
+    "docker:compose:up": "docker-compose -f docker-compose.yml up -d localstack",
+    "docker:compose:down": "docker-compose -f docker-compose.yml down",
+    "docker:compose:restart": "yarn docker:compose:down && yarn docker:compose:up",
+    "sqs": "bash ./localstackCreateSqs.sh",
+    "sls:deploy": "set AWS_DEFAULT_REGION=us-east-1 && sls deploy --stage local -v"
+  },
   "dependencies": {
+    "aws-sdk": "^2.596.0",
     "serverless-step-functions": "^2.11.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
   },
   "devDependencies": {
     "serverless-localstack": "^0.4.19",
+    "serverless-offline": "^5.12.1",
     "serverless-step-functions-offline": "^2.1.2"
   }
 }
