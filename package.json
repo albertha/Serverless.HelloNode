@@ -7,7 +7,7 @@
     "sls:deploy": "set AWS_DEFAULT_REGION=us-east-1 && sls deploy --stage local -v"
   },
   "dependencies": {
-    "aws-sdk": "^2.596.0",
+    "aws-sdk": "^2.814.0",
     "serverless-step-functions": "^2.11.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
